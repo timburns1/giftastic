@@ -36,3 +36,9 @@ html, body{
     font-size: 40px;
 
 }
+
+.submit{
+    background-color:indigo;
+    color: dodgerblue;
+    border: 1px solid;
+}
