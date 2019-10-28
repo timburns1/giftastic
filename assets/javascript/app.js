@@ -2,11 +2,11 @@ $(document).ready(function(){
 
     let topics = ["Frank Ocean", "Hunter S Thompson", "Daft Punk", "Letterkenny", "Bernie Sanders", "Bob Dylan", "Trailer Park Boys",];
 
-    var button;
-    var newTopic = ""; // new topic that will be added via the input field 
+    let button;
+    let newTopic = ""; // new topic that will be added via the input field 
 
 // function to create new buttons from the topics array
-    var buttonGenerator = function (){
+    let buttonGenerator = function (){
 	// the previous div elements are emptied 
 	 $("#buttonArea").empty();
 	// loops through the array and creates buttons
@@ -19,8 +19,8 @@ $(document).ready(function(){
 
 // The user clicks on a generated orange button, which generates 10 static, non-animated gif images from the GIPHY API and places them on the page. 
 $("#buttonArea").on("click", ".btn", function(){
-  		var thing = $(this).attr("data");
-  		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + thing + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+  		let thing = $(this).attr("data");
+  		let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + thing + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
 
 
@@ -33,9 +33,9 @@ $("#buttonArea").on("click", ".btn", function(){
   			
           	var results = response.data;
 
-          	for (var i = 0; i < results.length; i++) {
+          	for (let i = 0; i < results.length; i++) {
           		// a div is created to hold a gif of any topic
-	          	var topicDiv = $("<div>");
+	          	let topicDiv = $("<div>");
 	 			
 	          	// Under every gif, display its rating (PG, G, so on).
 	 			var p = $("<p>");
@@ -43,7 +43,7 @@ $("#buttonArea").on("click", ".btn", function(){
 	 			var p = $("<p>").text("Rating: " + results[i].rating);
 
 	 			// add a CSS style to create colored borders around the gifs
-	 			var topicImage = $("<img>").addClass("redBorder");
+	 			let topicImage = $("<img>").addClass("redBorder");
 
 	 			// add states of animate and still which will be toggled 
 	 			topicImage.attr("src", results[i].images.fixed_height_still.url);
@@ -68,7 +68,7 @@ $("#gifArea").on("click", ".gif", function(event){
 	event.preventDefault();
 	
 	// gets the current state of the clicked gif 
-	var state = $(this).attr("data-state");
+	let state = $(this).attr("data-state");
 	
 	// according to the current state gifs toggle between animate and still 
 	if (state === "still") {
