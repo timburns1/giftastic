@@ -17,7 +17,7 @@ $(document).ready(function(){
 }
 
 
-// The user clicks on a generated orange button, which generates 10 static, non-animated gif images from the GIPHY API and places them on the page. 
+// The user clicks on a generated button, which generates 10 static, non-animated gif images from the GIPHY API and places them on the page. 
 $("#buttonArea").on("click", ".btn", function(){
   		let thing = $(this).attr("data");
   		let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + thing + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
